@@ -1,0 +1,59 @@
+{
+  "name": "n8n-nodes-enrichlayer",
+  "version": "0.1.1",
+  "description": "n8n community node for the Enrich Layer API - enrich company, person, and school profiles.",
+  "keywords": [
+    "n8n-community-node-package",
+    "n8n",
+    "enrichlayer",
+    "enrichment",
+    "company",
+    "profile"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/enrichlayer/n8n-nodes-enrichlayer#readme",
+  "author": {
+    "name": "Enrich Layer"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/enrichlayer/n8n-nodes-enrichlayer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/enrichlayer/n8n-nodes-enrichlayer/issues"
+  },
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc && npm run copy:assets",
+    "copy:assets": "node -e \"const fs=require('fs');const dir='dist/nodes/EnrichLayer';fs.mkdirSync(dir,{recursive:true});fs.copyFileSync('nodes/EnrichLayer/enrichlayer.svg',dir+'/enrichlayer.svg');fs.copyFileSync('nodes/EnrichLayer/EnrichLayer.node.json',dir+'/EnrichLayer.node.json');\"",
+    "dev": "tsc --watch",
+    "format": "prettier nodes credentials --write",
+    "lint": "tsc --noEmit",
+    "test": "jest --forceExit --detectOpenHandles",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "dist"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/credentials/EnrichLayerApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/EnrichLayer/EnrichLayer.node.js"
+    ]
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.0",
+    "@types/node": "^20.11.0",
+    "jest": "^29.7.0",
+    "n8n-workflow": "*",
+    "prettier": "^3.2.0",
+    "ts-jest": "^29.1.0",
+    "typescript": "~5.3.0"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  }
+}

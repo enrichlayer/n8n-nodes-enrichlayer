@@ -1,0 +1,22 @@
+{
+  "node": "n8n-nodes-enrichlayer.enrichLayer",
+  "nodeVersion": "1.0",
+  "codexVersion": "1.0",
+  "categories": ["Data & Storage"],
+  "resources": {
+    "primaryDocumentation": [
+      {
+        "url": "https://enrichlayer.com/docs?utm_source=n8n&utm_medium=integration&utm_campaign=docs"
+      }
+    ],
+    "credentialDocumentation": [
+      {
+        "url": "https://enrichlayer.com/docs?utm_source=n8n&utm_medium=integration&utm_campaign=docs"
+      }
+    ]
+  },
+  "alias": ["enrich", "enrichlayer", "company", "profile", "school"],
+  "subcategories": {
+    "Data & Storage": ["Data Enrichment"]
+  }
+}
